@@ -12,7 +12,7 @@ const ChatBody = ({messages}) => {
   return (
     <>
       <header className="chat__mainHeader">
-        <p>Hangout with Friends and Classmates</p>
+        <h4>Hangout with Friends</h4>
         <button className="leaveChat__btn" onClick={handleLeaveChat}>
           LEAVE CHAT
         </button>
