@@ -36,10 +36,10 @@ const ChatBody = ({messages}) => {
             </div>
           )
         )}
-
+{/* 
         <div className="message__status">
           <p>someone is typing...</p>
-        </div>
+        </div> */}
       </div>
     </>
   );
