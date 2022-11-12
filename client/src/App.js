@@ -14,6 +14,8 @@ function App() {
         <Route path="/" element={<Home socket={socket} />}></Route>
         <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
       </Routes>
+      <h3>Developed by  Shrey<a href='https://twitter.com/shreykoradia'></a>& Vijay<a href='https://twitter.com/v1jayy__'></a></h3><br />
+      <h3>An Inside Tech App</h3>
     </div>
   </BrowserRouter>
   );
