@@ -10,12 +10,12 @@ function App() {
   return (
     <BrowserRouter>
     <div>
+    <h3>Developed by<a href='https://twitter.com/shreykoradia'>Shrey</a>&<a href='https://twitter.com/v1jayy__'>Vijay</a></h3><br />
+    <h3>An Inside Tech App</h3>
       <Routes>
         <Route path="/" element={<Home socket={socket} />}></Route>
         <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
       </Routes>
-      <h3>Developed by<a href='https://twitter.com/shreykoradia'>Shrey</a>&<a href='https://twitter.com/v1jayy__'>Vijay</a></h3><br />
-      <h3>An Inside Tech App</h3>
     </div>
   </BrowserRouter>
   );
