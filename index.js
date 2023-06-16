@@ -10,9 +10,11 @@ const server = http.createServer(app);
 
 const io = socketIO(server, {
   cors: {
-    origin: "https://localhost:3000",
+    origins: ["https://localhost:3000"],
+    credentials: true,
   },
 });
+
 app.use(cors());
 
 let users = [];

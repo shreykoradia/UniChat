@@ -3,10 +3,11 @@ import Home from './components/Home';
 import React from 'react'
 import ChatPage from './components/ChatPage'
 import socketIO from 'socket.io-client';
-// const socket = socketIO.connect('http://localhost:4000');
-const socket = socketIO.connect("https://unichat.up.railway.app")
-
+const socket = socketIO.connect('http://localhost:4000');
+// const socket = socketIO.connect("https://unichat.up.railway.app")
+  
 function App() {
+  console.log(socket)
   return (
     <BrowserRouter>
     <div>
