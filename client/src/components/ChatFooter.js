@@ -20,8 +20,8 @@ const ChatFooter = ({socket}) => {
       <form className="form" onSubmit={handleSendMessage}>
         <input
           type="text"
-          placeholder="Write message"
-          className="message"
+          placeholder="Message..."
+          className="message_send_field"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />

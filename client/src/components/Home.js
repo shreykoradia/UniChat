@@ -25,6 +25,7 @@ const Home = ({socket}) => {
         value={userName}
         placeholder='username <= six chars'
         onChange={(e) => setUserName(e.target.value)}
+        required
       />
        <button className="form_join_button">Join The Party</button>
        <h5 className='founder_name'>Developed & Maintained by <a href='www.twitter.com/shreykoradia'>u/SHREY</a></h5>
