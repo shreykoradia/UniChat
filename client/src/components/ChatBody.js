@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ActiveUserModal from './Modals/ActiveUserModal';
 
 const ChatBody = ({messages}) => {
   const navigate = useNavigate();
+  const [isModalUserActive , setIsModalUserActive] = useState(false);
+
+  const handleActiveUserClick = () => {
+    setIsModalUserActive(true)
+  }
 
   const handleLeaveChat = () => {
     localStorage.removeItem('userName');
@@ -13,7 +19,7 @@ const ChatBody = ({messages}) => {
     <>
       <header className="chat__mainHeader">
         <h4>Don't worry, We don't save chat's❤️</h4>
-        <button className='active_mobile_ui'>Active👥</button>
+        <button className='active_mobile_ui' onClick={handleActiveUserClick}>Active👥</button>
         <button className="leaveChat__btn" onClick={handleLeaveChat}>
           LEAVE CHAT
         </button>
@@ -37,11 +43,10 @@ const ChatBody = ({messages}) => {
             </div>
           )
         )}
-{/* 
-        <div className="message__status">
-          <p>someone is typing...</p>
-        </div> */}
       </div>
+      {
+        isModalUserActive && <ActiveUserModal setIsModalUserActive={setIsModalUserActive}/>
+      }
     </>
   );
 };

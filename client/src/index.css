@@ -223,9 +223,43 @@
   font-style: italic;
 }
 
+
 /* media queries from here  */
 
 @media screen and (max-width : 780px){
+  .header_modal_name{
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: medium;
+    font-weight: 700;
+    padding: 0.6rem;
+  }
+
+  .online_users_modal{
+    width: 100%;
+    position: absolute;
+    top: 15rem;
+    height: calc(100vh - 15rem);
+    z-index: 100;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  .close_button_active_user_modal{
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    padding: 0.6rem;
+    outline: none;
+    cursor: pointer; 
+    color: white;
+  }
   .active_mobile_ui{
     display: block;
     background-color: transparent;
