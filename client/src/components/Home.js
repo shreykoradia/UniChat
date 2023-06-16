@@ -14,22 +14,26 @@ const Home = ({socket}) => {
   };
   return (
     <>
-    <form className="home__container" onSubmit={handleSubmit}>
-      <h2 className="home__header">Sign in to UniChat</h2>
-      <label htmlFor="username">Choose a Username</label>
+    <div className='parent_container'>
+    <form className='form_container card_effect' onSubmit={handleSubmit}>
+      <h2 className='home_header'>Unichat</h2>
       <input
         type="text"
-        minLength={6}
+        maxLength={6}
         name="username"
-        id="username"
-        className="username__input"
+        className="username_input"
         value={userName}
+        placeholder='username <= six chars'
         onChange={(e) => setUserName(e.target.value)}
+        required
       />
-      <button className="home__cta">SIGN IN</button>
-      <h5 className='founder-name'>Developed by <a href='https://twitter.com/shreykoradia'>SHREY</a></h5>
-      <h6>Visit the Repository on Github @<a href='https://github.com/shreykoradia/UniChat'>UniChat</a>, For working and improving the app contact at the handle above , soon open for OpenSource</h6>
+       <button className="form_join_button">Join The Party</button>
+       <h5 className='founder_name'>Developed & Maintained by <a href='www.twitter.com/shreykoradia'>SHREY</a></h5>
+       <h6 className='founder_name'>Visit the Repository on Github <a href='https://github.com/shreykoradia/UniChat'>r/UniChat</a>, For working and improving the application contact at the handle above</h6>
     </form>
+    </div>
+
+
     </>
   );
 };
