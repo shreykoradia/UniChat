@@ -7,7 +7,7 @@ const ChatBar = ({ socket }) => {
 
   useEffect(() => {
     socket.on("newUserResponse", (data) => setUsers(data));
-  }, [socket , users]);
+  }, [socket , setUsers]);
   return (
     <>
       <div className="chat_sidebar">
