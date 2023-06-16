@@ -19,11 +19,11 @@ const Home = ({socket}) => {
       <h2 className='home_header'>Unichat</h2>
       <input
         type="text"
-        minLength={6}
+        maxLength={6}
         name="username"
         className="username_input"
         value={userName}
-        placeholder='username >= six chars'
+        placeholder='username <= six chars'
         onChange={(e) => setUserName(e.target.value)}
       />
        <button className="form_join_button">Join The Party</button>
