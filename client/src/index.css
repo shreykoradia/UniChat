@@ -6,34 +6,59 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
-.home__container {
+.parent_container{
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.home__container > * {
-  margin-bottom: 10px;
-}
-.home__header {
-  margin-bottom: 30px;
-}
-.username__input {
-  padding: 10px;
-  width: 50%;
-}
-.home__cta {
-  width: 200px;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #607eaa;
-  color: #f9f5eb;
-  outline: none;
-  border: none;
+
+.card_effect{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
   border-radius: 5px;
+}
+
+.form_container{
+  max-width: 30rem;
+  padding: 4rem;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem;
+}
+
+.username_input{
+  width: 100%;
+  height: 2rem;
+  background-color: #c4c5c61d;
+  color: black;
+  border: 4px ridge;
+  outline: none;
+  padding: 10px;
+}
+
+.form_join_button{
+  width: 60%;
+  padding: 5px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: 4px ridge;
+}
+.home_header{
+  font-weight: 900;
+  font-style: oblique;
+}
+.founder_name > a{
+  text-decoration: none;
+  outline: none;
+  color: rgb(5, 12, 75);
 }
 .chat {
   width: 100%;
@@ -159,13 +184,3 @@
   font-style: italic;
 }
 
-.founder-name{
-  margin-top: 3rem;
-}
-
-.founder-name > a{
-  text-decoration: none;
-  outline: none;
-  color: rgb(64, 87, 90);
-
-}

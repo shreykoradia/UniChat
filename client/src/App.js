@@ -7,7 +7,6 @@ const socket = socketIO.connect('http://localhost:4000');
 // const socket = socketIO.connect("https://unichat.up.railway.app")
   
 function App() {
-  console.log(socket)
   return (
     <BrowserRouter>
     <div>
