@@ -28,7 +28,7 @@ const Home = ({socket}) => {
         required
       />
        <button className="form_join_button">Join The Party</button>
-       <h5 className='founder_name'>Developed & Maintained by <a href='www.twitter.com/shreykoradia'>u/SHREY</a></h5>
+       <h5 className='founder_name'>Developed & Maintained by <a href='www.twitter.com/shreykoradia'>SHREY</a></h5>
        <h6 className='founder_name'>Visit the Repository on Github <a href='https://github.com/shreykoradia/UniChat'>r/UniChat</a>, For working and improving the application contact at the handle above</h6>
     </form>
     </div>

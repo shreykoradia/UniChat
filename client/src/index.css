@@ -216,25 +216,50 @@
 .sender__name {
   text-align: right;
 }
-.message__status {
-  position: fixed;
-  bottom: 50px;
-  font-size: 13px;
-  font-style: italic;
-}
 
 
 /* media queries from here  */
 
 @media screen and (max-width : 780px){
+
+  .current_users_mobile{
+    position: absolute;
+    color: white;
+    top: 5rem;
+    left: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .active_user_container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 5rem;
+    left: 1rem;
+    overflow: scroll;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 2rem;
+    height: 25vh;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .chat_users_mobile_list{
+    color: white;
+    list-style-type: none;
+    font-style: oblique ;
+    
+  }
   .header_modal_name{
     color: white;
     position: absolute;
     top: 0;
     left: 0;
-    font-size: medium;
+    font-size: 1rem;
     font-weight: 700;
     padding: 0.6rem;
+    font-style: oblique;
   }
 
   .online_users_modal{
@@ -242,6 +267,7 @@
     position: absolute;
     top: 15rem;
     height: calc(100vh - 15rem);
+    overflow: hidden;
     z-index: 100;
     margin-left: auto;
     display: flex;

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect } from "react";
 import { useUser } from "./Store/useUser";
 
 const ChatBar = ({ socket }) => {
-  // const [users, setUsers] = useState([]);
   const users = useUser((state) => state.activeUsers )
   const setUsers = useUser((state) => state.addActiveUsers)
 
