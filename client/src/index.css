@@ -93,6 +93,7 @@
   color: black;
   list-style: none;
   font-size: 0.825rem;
+  font-weight: bold;
 }
 
 ::-webkit-scrollbar {

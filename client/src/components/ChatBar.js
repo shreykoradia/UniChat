@@ -5,7 +5,7 @@ const ChatBar = ({ socket }) => {
 
   useEffect(() => {
     socket.on("newUserResponse", (data) => setUsers(data));
-  }, [socket, users]);
+  }, [socket , users]);
   return (
     <>
       <div className="chat_sidebar">
@@ -13,11 +13,13 @@ const ChatBar = ({ socket }) => {
 
         <div className="online_users card_effect">
           <h5 className="current_users">Currently Active</h5>
-
+          {
+            users.length === 0 && <h6>You just reloaded the Web App, Click on Leave Chat and Rejoin the Application</h6>
+          }
           {users.length > 0 &&
             users.map((user) => (
               <li className="chat_users" key={user.socketID}>
-                {user.userName}
+                u/{user.userName}
               </li>
             ))}
         </div>
