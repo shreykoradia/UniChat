@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Home = ({socket}) => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const Home = ({socket}) => {
      //sends the username and socket ID to the Node.js server
      socket.emit('newUser', { userName, socketID: socket.id });
      navigate('/chat');
+
   };
   return (
     <>

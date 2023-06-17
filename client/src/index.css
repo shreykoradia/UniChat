@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 .parent_container{
   width: 100%;
@@ -186,6 +187,10 @@
 }
 .sendBtn:hover {
   background-color: rgb(9, 102, 9);
+}
+
+.online_users_modal{
+  display: none;
 }
 .message__recipient {
   background: linear-gradient(270deg, rgb(93, 55, 169) 0%, rgb(43, 160, 140) 100%);
