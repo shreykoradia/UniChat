@@ -3,11 +3,14 @@ import { useNavigate } from "react-router-dom";
 import ActiveUserModal from "./Modals/ActiveUserModal";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import { useUser } from "./Store/useUser";
 
 const ChatBody = ({ messages }) => {
   const navigate = useNavigate();
   const [isModalUserActive, setIsModalUserActive] = useState(false);
-
+  const setUsers = useUser((state) => state.addActiveUsers)
+  const users = useUser((state) => state.activeUsers)
+  console.log(users)
   const currentUser = localStorage.getItem("userName");
 
   const handleActiveUserClick = () => {
@@ -17,7 +20,7 @@ const ChatBody = ({ messages }) => {
   const getToast = () => {
     toast("Not sure what Unichat is? send msgs now!", {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 500,
       hideProgressBar: false,
       closeOnClick: true,
       draggable: true,
@@ -27,6 +30,7 @@ const ChatBody = ({ messages }) => {
   };
 
   const handleLeaveChat = () => {
+    setUsers((users.filter((active) => active.userName !== currentUser)));
     localStorage.removeItem("userName");
     toast(`${currentUser}, Eniee Minee Moe, please don't go!`);
     setTimeout(() => {
