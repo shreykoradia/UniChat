@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
 }
 .parent_container{
   width: 100%;
@@ -100,6 +99,9 @@
 .online_users::-webkit-scrollbar {
   display: none;
 }
+.message__container::-webkit-scrollbar{
+  display: none ;
+}
 /* Hide scrollbar for IE, Edge and Firefox */
 .online_users {
   -ms-overflow-style: none;  /* IE and Edge */
@@ -132,7 +134,7 @@
   display: flex;
 }
 .chat__main {
-  height: 100vh;
+  height:100%;
   flex: 0.8;
 }
 
@@ -142,7 +144,7 @@
 
 .message__container {
   width: 100%;
-  height: calc(100vh - 22vh);
+  height: calc(100vh - 25vh);
   background-color: #fff;
   padding: 20px;
   overflow-y: scroll;
