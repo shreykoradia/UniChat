@@ -20,7 +20,6 @@ useEffect(() => {
   socket.on("userLeft" , (data) => setActiveUsers(data))
 }, [socket , setActiveUsers])
 
-console.log(activeUsers)
 
   const getToast = () => {
     toast("Not sure what Unichat is? send msgs now!", {
