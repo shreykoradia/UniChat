@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ActiveUserModal from "./Modals/ActiveUserModal";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import { useUser } from "./Store/useUser";
+import { useActiveUser } from "./Store/UserProvider";
 
-const ChatBody = ({ messages }) => {
+const ChatBody = ({ messages , socket }) => {
   const navigate = useNavigate();
   const [isModalUserActive, setIsModalUserActive] = useState(false);
-  const setUsers = useUser((state) => state.addActiveUsers)
-  const users = useUser((state) => state.activeUsers)
-  console.log(users)
-  const currentUser = localStorage.getItem("userName");
+  // const setUsers = useUser((state) => state.addActiveUsers)
+  // const users = useUser((state) => state.activeUsers)
+  const {activeUsers , setActiveUsers} = useActiveUser();
 
   const handleActiveUserClick = () => {
     setIsModalUserActive(true);
   };
+
+useEffect(() => {
+  socket.on("userLeft" , (data) => setActiveUsers(data))
+}, [socket , setActiveUsers])
+
+console.log(activeUsers)
 
   const getToast = () => {
     toast("Not sure what Unichat is? send msgs now!", {
@@ -30,12 +35,13 @@ const ChatBody = ({ messages }) => {
   };
 
   const handleLeaveChat = () => {
-    setUsers((users.filter((active) => active.userName !== currentUser)));
-    localStorage.removeItem("userName");
-    toast(`${currentUser}, Eniee Minee Moe, please don't go!`);
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
+    if(socket){
+      socket.disconnect();
+      socket = null
+      navigate("/")
+
+    }
+
   };
   return (
     <>
@@ -44,7 +50,7 @@ const ChatBody = ({ messages }) => {
         <button className="active_mobile_ui" onClick={handleActiveUserClick}>
           Active👥
         </button>
-        <button className="leaveChat__btn" onClick={handleLeaveChat}>
+        <button className="leaveChat__btn" onClick={() => handleLeaveChat()}>
           LEAVE CHAT
         </button>
       </header>

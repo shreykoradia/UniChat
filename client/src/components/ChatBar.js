@@ -1,13 +1,14 @@
 import React, {useEffect } from "react";
-import { useUser } from "./Store/useUser";
+import { useActiveUser } from "./Store/UserProvider";
 
 const ChatBar = ({ socket }) => {
-  const users = useUser((state) => state.activeUsers )
-  const setUsers = useUser((state) => state.addActiveUsers)
+  // const users = useUser((state) => state.activeUsers )
+  // const setUsers = useUser((state) => state.addActiveUsers)
+  const {activeUsers , setActiveUsers} = useActiveUser();
 
   useEffect(() => {
-    socket.on("newUserResponse", (data) => setUsers(data));
-  }, [socket , setUsers]);
+    socket.on("newUserResponse", (data) => setActiveUsers(data));
+  }, [socket , setActiveUsers]);
   return (
     <>
       <div className="chat_sidebar">
@@ -16,10 +17,10 @@ const ChatBar = ({ socket }) => {
         <div className="online_users card_effect">
           <h5 className="current_users">Currently Active</h5>
           {
-            users.length === 0 && <h6>You just reloaded the Web App, Click on Leave Chat and Rejoin the Application</h6>
+            activeUsers.length === 0 && <h6>You just reloaded the Web App, Click on Leave Chat and Rejoin the Application</h6>
           }
-          {users.length > 0 &&
-            users.map((user) => (
+          {activeUsers.length > 0 &&
+            activeUsers.map((user) => (
               <li className="chat_users" key={user.socketID}>
                 u/{user.userName}
               </li>

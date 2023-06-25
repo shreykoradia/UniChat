@@ -48,7 +48,7 @@ io.on("connection", (socket) => {
     users = users.filter((user) => user.socketID !== socket.id);
     // console.log(users);
     //Sends the list of users to the client
-    io.emit("newUserResponse", users);
+    io.emit("userLeft", users);
     socket.disconnect();
   });
 });

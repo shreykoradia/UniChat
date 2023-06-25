@@ -1,8 +1,8 @@
 import React from 'react'
-import { useUser } from '../Store/useUser'
+import { useActiveUser } from '../Store/UserProvider'
 
 const ActiveUserModal = ({setIsModalUserActive}) => {
-    const users = useUser((state) => state.activeUsers)
+    const {activeUsers} = useActiveUser();
     const closeModal = () => {
         setIsModalUserActive(false)
     }
@@ -12,11 +12,11 @@ const ActiveUserModal = ({setIsModalUserActive}) => {
         <h2 className='header_modal_name'>Unichat</h2>
           <h5 className="current_users_mobile">Currently Active</h5>
           {
-            users.length === 0 && <h6>You just reloaded the Web App, Click on Leave Chat and Rejoin the Application</h6>
+            activeUsers.length === 0 && <h6>You just reloaded the Web App, Click on Leave Chat and Rejoin the Application</h6>
           }
             <div className='active_user_container'>
-          {users.length > 0 &&
-            users.map((user) => (
+          {activeUsers.length > 0 &&
+            activeUsers.map((user) => (
               <li className="chat_users_mobile_list" key={user.socketID}>
                 u/{user.userName}
               </li>
