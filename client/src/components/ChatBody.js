@@ -10,7 +10,7 @@ const ChatBody = ({ messages , socket }) => {
   const [isModalUserActive, setIsModalUserActive] = useState(false);
   // const setUsers = useUser((state) => state.addActiveUsers)
   // const users = useUser((state) => state.activeUsers)
-  const {activeUsers , setActiveUsers} = useActiveUser();
+  const {setActiveUsers} = useActiveUser();
 
   const handleActiveUserClick = () => {
     setIsModalUserActive(true);
