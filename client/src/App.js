@@ -4,8 +4,8 @@ import React from 'react'
 import ChatPage from './components/ChatPage'
 import socketIO from 'socket.io-client';
 import { UserProvider } from './components/Store/UserProvider';
-const socket = socketIO.connect('http://localhost:4000');
-// const socket = socketIO.connect("https://unichat.up.railway.app")
+// const socket = socketIO.connect('http://localhost:4000');
+const socket = socketIO.connect("https://unichat.up.railway.app")
   
 function App() {
   return (
